@@ -1,5 +1,3 @@
-#setwd("~/laidi/datascience/03-getting-and-cleaning-data/projet/")
-
 library(dplyr)
 
 if(!file.exists("UCI HAR Dataset")) {
@@ -64,6 +62,6 @@ names(tidy_mean) <- names(data_complete)
 meanfreq_correction <- grep("meanFreq",names(tidy_mean))
 tidy_mean <- tidy_mean[-meanfreq_correction]
 
-write.table(tidy_mean,"tidy_mean.cvs",row.name=FALSE,sep=",")
+write.table(tidy_mean,"tidy_mean.txt",row.name=FALSE,sep=",")
 
 rm(tmp_id,tmp_mean,tmp_row,tmp_tab,k)
