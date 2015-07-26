@@ -16,7 +16,7 @@ merged_data <- rbind(read.table("UCI HAR Dataset/train/X_train.txt"),read.table(
 
 
 titles <- read.csv("UCI HAR Dataset/features.txt",sep = " ",header = FALSE)
-index_titles <- sort(c(grep("mean()",titles[,2]),grep("std()",titles[,2])))
+index_titles <- sort(c(grep("mean",titles[,2]),grep("std",titles[,2])))
 
 titles[,2]<-gsub("\\(|\\)","",titles[,2])
 titles[,2]<-gsub("-","_",titles[,2])
