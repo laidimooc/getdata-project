@@ -1,4 +1,4 @@
-#setwd("../Documents/laidi/datascience/03-getting-and-cleaning-data/projet/")
+#setwd("~/laidi/datascience/03-getting-and-cleaning-data/projet/")
 
 library(dplyr)
 
@@ -26,9 +26,9 @@ titles[,2]<-gsub("-","_",titles[,2])
 
 
 
-MeanStd_data <- merged_data[,index_titles]
+data_meanstd <- merged_data[,index_titles]
 
-names(MeanStd_data) <- titles[index_titles,2]
+names(data_meanstd) <- titles[index_titles,2]
 
 
 activities <- rbind(read.csv("UCI HAR Dataset/train/y_train.txt", header = FALSE),read.csv("UCI HAR Dataset/test/y_test.txt",header = FALSE))
@@ -61,6 +61,9 @@ for (i in sort(unique(data_complete[,1]))) {
 }
 names(tidy_mean) <- names(data_complete)
 
-write.table(tidy_mean,"tidy_mean.txt",row.name=FALSE)
+meanfreq_correction <- grep("meanFreq",names(tidy_mean))
+tidy_mean <- tidy_mean[-meanfreq_correction]
+
+write.table(tidy_mean,"tidy_mean.cvs",row.name=FALSE,sep=",")
 
 rm(tmp_id,tmp_mean,tmp_row,tmp_tab,k)
