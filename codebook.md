@@ -1,6 +1,6 @@
 The data are provided [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
-Data consists of a two sets (trin and test) of mesurement from their phone. 
+Data consists of a two sets (train and test) of mesurement from their phone. 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
 
 
